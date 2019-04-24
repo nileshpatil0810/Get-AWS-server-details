@@ -9,6 +9,7 @@ $instance_details = shell_exec("aws ec2 describe-instance-status --instance-id i
 //Add here instance details
 
 $aws_server_decode = json_decode($instance_details);
+
 $server_InstanceStatuses = $aws_server_decode->InstanceStatuses[0]->InstanceState->Name;
 $server_SystemStatus = $aws_server_decode->InstanceStatuses[0]->SystemStatus->Status;
 
